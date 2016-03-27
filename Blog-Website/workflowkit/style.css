@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+
+/* FULLSCREEN EFFECT */
+html, body {
+ -moz-osx-font-smoothing: antialiased;
+ -webkit-font-smoothing: antialiased;
+ margin: 0;
+ padding: 0;
+ height: 100%;
+}
+.content {
+  background-image: url("http://i.imgur.com/fz2Kl2r.jpg");
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+header{
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  font-size: 150px;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 400px;
+}
+/* h1 */
+h1{
+  font-family: 'Kaushan Script', cursive;
+  color: #ffffff;
+  font-size: 75px;
+}
+.right{
+  text-align: right;
+  padding-right: 100px;
+}
+.left{
+  padding-left: 100px;
+}
+p{
+  font-size: 30px;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-left: 50px;
+}
+.right3{
+  padding-left: 725px;
+}
+/* h2 */
+h2{
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  font-size: 50px;
+  text-decoration: underline;
+}
+.right2{
+  text-align: right;
+  padding-right: 400px;
+}
+/* SCANLINES EFFECT */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines:before, .scanlines:after {
+  display: block;
+  pointer-events: none;
+  content: '';
+  position: absolute;
+}
+.scanlines:before {
+  width: 100%;
+  height: 2px;
+  z-index: 2147483649;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0.75;
+  -webkit-animation: scanline 6s linear infinite;
+          animation: scanline 6s linear infinite;
+}
+.scanlines:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483648;
+  background: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+  background-size: 100% 4px;
+  -webkit-animation: scanlines 1s steps(60) infinite;
+          animation: scanlines 1s steps(60) infinite;
+}
+
+/* ANIMATE SCANLINE */
+@-webkit-keyframes scanline {
+  0% {
+    -webkit-transform: translate3d(0, 200000%, 0);
+            transform: translate3d(0, 200000%, 0);
+  }
+}
+@keyframes scanline {
+  0% {
+    -webkit-transform: translate3d(0, 200000%, 0);
+            transform: translate3d(0, 200000%, 0);
+  }
+}
+@-webkit-keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+
+ul{
+  list-style-type: none;
+}

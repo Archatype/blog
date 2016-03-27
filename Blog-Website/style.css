@@ -1,0 +1,238 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300);
+
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+/* Prefrences for center content */
+
+.main {
+  text-align: left;
+  background: #e7e7e7;
+  height: 2000px;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+}
+
+.vm{
+  text-align: right;
+  padding-right: 100px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  padding-top: 10px;
+}
+
+.vm a{
+  text-decoration: none;
+  color: black;
+}
+
+.vm:hover{
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.image img:hover{
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
+.image {
+  text-align: center;
+}
+
+.video{
+  text-align: center;
+}
+/* Prefrences for left sidebar */
+.aside-1 {
+  background: #cf2424;
+  color: white;
+  width: 1px;
+}
+
+hr {
+  width: 125px;
+}
+
+/* Adjusting header */
+header {
+  font-family: 'Lobster';
+  font-weight: lighter;
+  font-size: 50px;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+header a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Prefrences for navigation on aside-1 */
+nav {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  padding-top: 50px;
+}
+
+nav ul li {
+  padding-top: 30px;
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  animation-name: tada;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+}
+
+li:hover {
+  animation-name: tada;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.icons{
+  padding-left: 30px;
+  padding-top: 20px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.icons img{
+  width: 50px;
+  padding-top: 20px;
+}
+
+.icons img:hover{
+  -webkit-filter: grayscale(100%);
+}
+
+/* Prefrences for right sidebar */
+.aside-2 {
+  background: #fbfefe;
+  width: 1px;
+}
+
+
+
+/* Responsive CSS */
+@media all and (min-width: 800px) {
+  /*Placing the aside sections to both left and right sides of the page*/
+  .aside {
+    flex: 1 auto;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+
+  /*Changing order of sections*/
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside-2 {
+    order: 3;
+  }
+}
